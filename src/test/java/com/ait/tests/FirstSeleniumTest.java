@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import java.time.Duration;
 import java.util.List;
 
@@ -14,29 +15,29 @@ public class FirstSeleniumTest {
 
     WebDriver driver;
 
-    //before-setUp
+    //before - setUp
     @BeforeMethod
     public void setUp() {
         driver = new ChromeDriver();
-        driver.get("https://ilcarro.web.app"); //without history
-        //driver.navigate().to( "https://ilcarro.web.app"); //with history
+        driver.get("https://ilcarro.web.app"); // without history
+        //driver.navigate().to("https://ilcarro.web.app"); // with history
 
-  //      driver.navigate().back();
-  //      driver.navigate().forward();
-  //      driver.navigate().refresh();
-        //maximize browser to window;
+//        driver.navigate().back();
+//        driver.navigate().forward();
+//        driver.navigate().refresh();
+
+        //maximize browser to window
         driver.manage().window().maximize();
 
-        //wail for all elements on the website to load before staring test
+        //wait for all elements on the website to load before staring test
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-      //  driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-
+        //    driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
     }
 
     //test
     @Test
-    public void openChromTest(){
+    public void openChromeTest() {
         System.out.println("Browser opens!");
     }
 
@@ -53,17 +54,16 @@ public class FirstSeleniumTest {
 
         List<WebElement> elements = driver.findElements(By.tagName("a"));
         System.out.println(elements.size());
-
     }
 
     @Test
-    public void findElementByld(){
-        driver.findElements(By.id("city"));
-        driver.findElements(By.id("dates"));
+    public void findElementById() {
+        driver.findElement(By.id("city"));
+        driver.findElement(By.id("dates"));
     }
 
     @Test
-    public void findElementByClassName(){
+    public void findElementByClassName() {
         WebElement element = driver.findElement(By.className("header"));
         System.out.println(element.getText());
 
@@ -73,14 +73,103 @@ public class FirstSeleniumTest {
         WebElement element1 = driver.findElement(By.className("navigation-link"));
         System.out.println(element1.getText());
 
-        driver.findElements(By.className("fas"));
+        driver.findElement(By.className("fas"));
     }
 
-
-    //after-tearDown
-    @AfterMethod(enabled = false)//отключает работу меетода
-    public void tearDown(){
-        //driver.quit(); all tabs & close browser
-        //driwer.close();//only one tab(if tab only one -> browser)
+    //after - tearDown
+    @AfterMethod(enabled = true)
+    public void tearDown() {
+        driver.quit(); // all tabs & close browser
+        //   driver.close(); // only one tab(if tab only one -> browser)
     }
+
+    @Test
+    public void findElementByLinkText() {
+        WebElement linkText = driver.findElement(By.linkText("Let the car work"));
+        System.out.println(linkText.getText());
+        System.out.println("***********************************");
+
+        WebElement linkText1 = driver.findElement(By.linkText("Terms of use"));
+        System.out.println(linkText1.getText());
+        System.out.println("****************************************");
+
+        WebElement partialLinkText = driver.findElement(By.partialLinkText("car work"));
+        System.out.println(partialLinkText.getText());
+    }
+
+    @Test
+    public void findElementByCssSelector() {
+        //tagName -> css
+        //driver.findElement(By.tagName("h1"));
+        driver.findElement(By.cssSelector("h1"));
+
+        //id -> css - #
+        //driver.findElement(By.id("city"));
+        driver.findElement(By.cssSelector("#city"));
+
+        //className -> css - .
+        //driver.findElement(By.className("header"));
+        driver.findElement(By.cssSelector(".header"));
+
+        //[key='value']
+        driver.findElement(By.cssSelector("[type='submit']"));
+        driver.findElement(By.cssSelector("[href='/search']"));
+        driver.findElement(By.cssSelector("[for='dates']"));
+
+        //contains -> *
+        driver.findElement(By.cssSelector("[href*='results?']"));
+        //start with -> ^
+        driver.findElement(By.cssSelector("[href^='/let']"));
+        //end on -> $
+        driver.findElement(By.cssSelector("[href$='Tokyo']"));
+
+        driver.findElement(By.cssSelector(".logo>img"));
+
+        driver.findElement(By.cssSelector(".navigation-link:nth-child(5)"));
+        driver.findElement(By.cssSelector(".title:nth-child(2)"));
+        driver.findElement(By.cssSelector(".description:nth-child(1)"));
+        driver.findElement(By.cssSelector(".top-cities>a:nth-child(1)"));
+    }
+
+    @Test
+    public void findElementByXpath() {
+        //xpath->//*[@key='value']
+        //driver.findElement(By.tagName("h1"));
+        driver.findElement(By.xpath("//h1"));
+
+        //driver.findElement(By.id("city"));
+        driver.findElement(By.xpath("//*[@id='city']"));
+
+        //driver.findElement(By.className("header"));
+        driver.findElement(By.xpath("//*[@class='header']"));
+
+        driver.findElement(By.xpath("//*[@type='submit']"));
+        driver.findElement(By.xpath("//*[@href='/search']"));
+        driver.findElement(By.xpath("//*[@for='dates']"));
+
+        //contains text (не работает с сайтами где есть несколько языков)
+        driver.findElement(By.xpath("//*[contains(.,'Find your')]"));
+
+        //equals
+        driver.findElement(By.xpath("//*[text()='Find your car now!']"));
+        driver.findElement(By.xpath("//*[.='Find your car now!']"));
+
+        //contains
+        driver.findElement(By.xpath("//*[contains(@href,'results?')]"));
+        //start with
+        driver.findElement(By.xpath("//*[starts-with(@href,'/let')]"));
+
+        //parent
+        driver.findElement(By.xpath("//h1/.."));
+        driver.findElement(By.xpath("//h1/parent::*"));
+        driver.findElement(By.xpath("//h1/parent::div"));
+
+        //ancestor
+        driver.findElement(By.xpath("//h1/ancestor::*"));
+        driver.findElement(By.xpath("//h1/ancestor::div"));
+        driver.findElement(By.xpath("//h1/ancestor::div[2]"));
+
+
+    }
+
 }
