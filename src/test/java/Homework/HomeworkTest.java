@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class HomeworkTest {
+public class HomeworkTest extends TestBase{
 
     WebDriver driver;
 
@@ -19,7 +19,7 @@ public class HomeworkTest {
 @BeforeMethod
 public void setUp() {
     driver = new ChromeDriver();
-    driver.get("https://demowebshop.tricentis.com/");
+    driver.get("https://demowebshop.tricentis.com");
     driver.manage().window().maximize();
     driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
