@@ -42,13 +42,5 @@ public class TestBase {
         driver.findElement(locator).click();
     }
 
-    public boolean isAlertPresent() {
-        Alert alert = new WebDriverWait(driver, Duration.ofSeconds(20))
-                .until(ExpectedConditions.alertIsPresent());
-        if (alert == null) {
-            return false;
-        }
-        return true;
 
-    }
 }
