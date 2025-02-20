@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class CreateAccountTests extends TestBase{
+public class CreateAccountTests extends TestBase {
 
     @Test
     public void createNewUserPositiveTest() {
@@ -20,23 +20,19 @@ public class CreateAccountTests extends TestBase{
         //enter last name
         type(By.name("LastName"), "Muth");
         //enter email
-        type(By.name("Email"), "muth@dg.com");
+        type(By.name("Email"), "muthA@dg.com");
         //enter password
-        type(By.name("Password"), "QwEr!2#3");
+        type(By.name("Password"), "QwEr!2#5");
         //enter confirm password
-        type(By.name("ConfirmPassword"), "QwEr!2#3");
+        type(By.name("ConfirmPassword"), "QwEr!2#5");
         //click on Registration button
         click(By.name("register-button"));
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement logoutButton = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".ico-logout")));
 
-        // Проверяем, что кнопка "Logout" присутствует, значит регистрация успешна
-        Assert.assertTrue(logoutButton.isDisplayed(), "Ошибка: регистрация не удалась, кнопка 'Logout' не найдена.");
+        Assert.assertTrue(isElementPresent(By.cssSelector(".ico-logout")),
+                "Ошибка: регистрация не удалась, кнопка 'Logout' не найдена.");
     }
 
-
-
-    }
+}
 
 
