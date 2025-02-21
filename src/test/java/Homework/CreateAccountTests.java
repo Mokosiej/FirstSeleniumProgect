@@ -11,8 +11,12 @@ import java.time.Duration;
 
 public class CreateAccountTests extends TestBase {
 
+    int i = (int) (System.currentTimeMillis()/1000)%3600;
+
     @Test
     public void createNewUserPositiveTest() {
+
+        int i = (int) (System.currentTimeMillis()/1000)%3600;
         //click on register link
         click(By.cssSelector("[href='/register']"));
         //enter first name
@@ -20,7 +24,7 @@ public class CreateAccountTests extends TestBase {
         //enter last name
         type(By.name("LastName"), "Muth");
         //enter email
-        type(By.name("Email"), "muthA@dg.com");
+        type(By.name("Email"), "muthA"+i+"@dg.com");
         //enter password
         type(By.name("Password"), "QwEr!2#5");
         //enter confirm password
