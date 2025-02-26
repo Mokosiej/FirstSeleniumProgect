@@ -1,45 +1,28 @@
 package Homework;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 public class AddItemToCartTests extends TestBase {
 
+    @BeforeMethod
+    public void precondition() {
+        app.user.login("muthA@dg.com", "QwEr!2#5");
+    }
+
     @Test
     public void addItemToCartTest() {
-
-        login("muthA@dg.com", "QwEr!2#5");
-
         String productName = "14.1-inch Laptop";
+        app.cart.addItemToCart(productName);
 
-        click(By.linkText(productName));
-        click(By.id("add-to-cart-button-31"));
-
-
-        click(By.cssSelector(".cart-label"));
-
-
-        Assert.assertTrue(isElementPresent(By.linkText(productName)),
+        Assert.assertTrue(app.cart.isItemInCart(productName),
                 "Ошибка: товар " + productName + " не найден в корзине!");
-
-
-        clearCart();
     }
 
-
-    private void login(String email, String password) {
-        click(By.cssSelector(".ico-login"));
-        type(By.id("Email"), email);
-        type(By.id("Password"), password);
-        click(By.cssSelector("input.button-1.login-button"));
-    }
-
-
-    private void clearCart() {
-        click(By.cssSelector(".cart-label"));
-        if (isElementPresent(By.name("updatecart"))) {
-            click(By.name("updatecart"));
-        }
+    @AfterMethod
+    public void postcondition() {
+        app.cart.clearCart();
     }
 }
