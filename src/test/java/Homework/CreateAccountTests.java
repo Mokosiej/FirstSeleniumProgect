@@ -11,9 +11,9 @@ public class CreateAccountTests extends TestBase {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
         String email = "muthA" + i + "@dg.com";
 
-        app.user.register("Adam", "Muth", email, "QwEr!2#5");
+        app.getUserHelper().register("Adam", "Muth", email, "QwEr!2#5");
 
-        Assert.assertTrue(app.user.isElementPresent(By.cssSelector(".ico-logout")),
+        Assert.assertTrue(app.getUserHelper().isElementPresent(By.cssSelector(".ico-logout")),
                 "Ошибка: регистрация не удалась, кнопка 'Logout' не найдена.");
     }
 }
