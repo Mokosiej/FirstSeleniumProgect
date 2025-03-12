@@ -13,4 +13,3 @@ public class NavigationHelper extends BaseHelper {
         click(By.cssSelector(".header-logo"));
     }
 }
-

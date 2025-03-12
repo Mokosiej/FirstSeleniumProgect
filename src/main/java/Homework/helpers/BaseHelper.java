@@ -24,4 +24,3 @@ public class BaseHelper {
         driver.findElement(locator).click();
     }
 }
-

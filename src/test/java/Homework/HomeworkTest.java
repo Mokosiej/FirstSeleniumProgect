@@ -16,56 +16,56 @@ public class HomeworkTest extends TestBase{
     WebDriver driver;
 
 
-@BeforeMethod
-public void setUp() {
-    driver = new ChromeDriver();
-    driver.get("https://demowebshop.tricentis.com");
-    driver.manage().window().maximize();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    @BeforeMethod
+    public void setUp() {
+        driver = new ChromeDriver();
+        driver.get("https://demowebshop.tricentis.com");
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-}
+    }
 
 
-@Test
-public void openChromTest(){
-    System.out.println("Browser opens!");
-}
+    @Test
+    public void openChromTest(){
+        System.out.println("Browser opens!");
+    }
 
-@Test
-public void findElementsByTagName() {
-    WebElement element = driver.findElement(By.tagName("h2"));
-    System.out.println(element.getText());
+    @Test
+    public void findElementsByTagName() {
+        WebElement element = driver.findElement(By.tagName("h2"));
+        System.out.println(element.getText());
 
-    WebElement element1 = driver.findElement(By.tagName("h3"));
-    System.out.println(element1.getText());
+        WebElement element1 = driver.findElement(By.tagName("h3"));
+        System.out.println(element1.getText());
 
-    WebElement element2 = driver.findElement(By.tagName("a"));
-    System.out.println(element2.getText());
+        WebElement element2 = driver.findElement(By.tagName("a"));
+        System.out.println(element2.getText());
 
-    List<WebElement> elements = driver.findElements(By.tagName("a"));
-    System.out.println(elements.size());
+        List<WebElement> elements = driver.findElements(By.tagName("a"));
+        System.out.println(elements.size());
 
-}
+    }
 
-@Test
-public void findElementByld(){
-    driver.findElements(By.id("bar-notification"));
-    driver.findElements(By.id("dialog-notifications-success"));
-}
+    @Test
+    public void findElementByld(){
+        driver.findElements(By.id("bar-notification"));
+        driver.findElements(By.id("dialog-notifications-success"));
+    }
 
-@Test
-public void findElementByClassName(){
-    WebElement element = driver.findElement(By.className("header"));
-    System.out.println(element.getText());
+    @Test
+    public void findElementByClassName(){
+        WebElement element = driver.findElement(By.className("header"));
+        System.out.println(element.getText());
 
-    List<WebElement> elements = driver.findElements(By.className("header-logo"));
-    System.out.println(elements.size());
+        List<WebElement> elements = driver.findElements(By.className("header-logo"));
+        System.out.println(elements.size());
 
-    WebElement element1 = driver.findElement(By.className("header-links-wrapper"));
-    System.out.println(element1.getText());
+        WebElement element1 = driver.findElement(By.className("header-links-wrapper"));
+        System.out.println(element1.getText());
 
-    driver.findElements(By.className("header-links"));
-}
+        driver.findElements(By.className("header-links"));
+    }
     @Test
     public void findElementByCssSelector() {
         driver.findElement(By.cssSelector("h3"));

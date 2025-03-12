@@ -1,5 +1,7 @@
 package Homework;
 
+import Homework.models.Contact;
+import Homework.utils.DataProviders;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -16,4 +18,7 @@ public class CreateAccountTests extends TestBase {
         Assert.assertTrue(app.getUserHelper().isElementPresent(By.cssSelector(".ico-logout")),
                 "Ошибка: регистрация не удалась, кнопка 'Logout' не найдена.");
     }
+
+
+
 }
