@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Homework.HomeworkTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2025-02-26T18:13:47" hostname="TATSIANA" time="22.918">
+  <properties/>
+  <testcase name="findElementByClassName" classname="Homework.HomeworkTest" time="0.163"/>
+  <testcase name="findElementByCssSelector" classname="Homework.HomeworkTest" time="1.045"/>
+  <testcase name="findElementByXpath" classname="Homework.HomeworkTest" time="0.867"/>
+  <testcase name="findElementByld" classname="Homework.HomeworkTest" time="0.152"/>
+  <testcase name="findElementsByTagName" classname="Homework.HomeworkTest" time="0.341"/>
+  <testcase name="openChromTest" classname="Homework.HomeworkTest" time="0.039"/>
+  <system-out><![CDATA[Register
+Log in
+Shopping cart
+(0)
+Wishlist
+(0)
+1
+Register
+Log in
+Shopping cart
+(0)
+Wishlist
+(0)
+Welcome to our store
+INFORMATION
+
+95
+Browser opens!
+]]></system-out>
+  <system-err><![CDATA[февр. 26, 2025 7:13:46 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+февр. 26, 2025 7:13:49 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+февр. 26, 2025 7:13:53 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+февр. 26, 2025 7:13:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+февр. 26, 2025 7:14:02 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+февр. 26, 2025 7:14:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+]]></system-err>
+</testsuite>

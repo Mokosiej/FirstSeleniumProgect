@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ait.tests.TableTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-26T18:15:16" hostname="TATSIANA" time="0.697">
+  <properties/>
+  <testcase name="findTableElementWithCss" classname="com.ait.tests.TableTest" time="0.697"/>
+  <system-out><![CDATA[21
+Company Contact Country
+Alfreds Futterkiste Maria Anders Germany
+Berglunds snabbk?p Christina Berglund Sweden
+Centro comercial Moctezuma Francisco Chang Mexico
+Ernst Handel Roland Mendel Austria
+Island Trading Helen Bennett UK
+K?niglich Essen Philip Cramer Germany
+Laughing Bacchus Winecellars Yoshi Tannamuri Canada
+Magazzini Alimentari Riuniti Giovanni Rovelli Italy
+Firstname Lastname
+Peter Griffin
+Lois Griffin
+Firstname Lastname
+Peter Griffin
+Lois Griffin
+Firstname Lastname
+Peter Griffin
+Lois Griffin
+Firstname Lastname
+Peter Griffin
+Lois Griffin
+***************************************
+Centro comercial Moctezuma Francisco Chang Mexico
+*************************************
+Francisco Chang
+]]></system-out>
+  <system-err><![CDATA[февр. 26, 2025 7:15:13 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+]]></system-err>
+</testsuite>

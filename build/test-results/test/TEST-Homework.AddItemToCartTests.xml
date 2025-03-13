@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Homework.AddItemToCartTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-02-26T18:13:35" hostname="TATSIANA" time="1.774">
+  <properties/>
+  <testcase name="addItemToCartTest" classname="Homework.AddItemToCartTests" time="1.774"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[февр. 26, 2025 7:13:32 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 133, returning the closest version; found: 132; Please update to a Selenium version that supports CDP version 133
+]]></system-err>
+</testsuite>
