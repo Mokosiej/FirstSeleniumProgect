@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoky" verbose="1">
+    <test name="Smoky">
+        <classes>
+            <class name="Homework.AddItemToCartTests"/>
+            <class name="Homework.CreateAccountTests">
+                <methods>
+                    <exclude name=".*Negative.*"/>
+                </methods>
+            </class>
+            <class name="Homework.RegistrationTests">
+                <parameter name="name" value="Florian"></parameter>
+                <parameter name="lastName" value="Wirtz"></parameter>
+                <parameter name="email" value="florian@gm.com"></parameter>
+                <parameter name="password" value="werr2346#$"></parameter>
+                <methods>
+                    <exclude name=".*From.*"/>
+                </methods>
+            </class>
+            <class name="Homework.HomeworkTest"/>
+        </classes>
+    </test>
+</suite>
